@@ -31,7 +31,26 @@ def input_number(step):
 
         break
 
-    return number
+    return float(number)
+
+
+def solve(number_one, number_two, operation):
+    result = None
+
+    if operation == '+':
+        result = number_one + number_two
+    elif operation == '-':
+        result = number_one - number_two
+    elif operation == '*':
+        result = number_one * number_two
+    else:
+        result = number_one / number_two
+
+    return result
+
+
+def print_solve(number_one, number_two, operation, result):
+    print(f'{number_one} {operation} {number_two} = {result}')
 
 
 def main():
@@ -39,7 +58,8 @@ def main():
     number_one = input_number('первое')
     number_two = input_number('второе')
     operation = input_operation()
-    print(f'{number_one} {operation} {number_two} = результат')
+    result = solve(number_one, number_two, operation)
+    print_solve(number_one, number_two, operation, result)
 
 
 if __name__ == '__main__':
